@@ -6,6 +6,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 url: '/home',
                 templateUrl: "tpl/home.html"
             },
+            instant = {
+                name: 'instant',
+                url: '/instant',
+                templateUrl: "tpl/instant.html"
+            },
             day = {
                 name: 'day',
                 url: '/day',
@@ -25,13 +30,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 url: '/team',
                 templateUrl: "tpl/team.html"
             },
-            fisrt = {
+            first = {
                 name: 'first',
                 url: '/',
                 templateUrl: "tpl/home.html"
             }
 
+        $stateProvider.state(first);
         $stateProvider.state(home);
+        $stateProvider.state(instant);
         $stateProvider.state(day);
         $stateProvider.state(month);
         $stateProvider.state(team);
