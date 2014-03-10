@@ -18,7 +18,6 @@ app.controller("dayCtrl", function ($scope, dayData) {
                         var energy = []
                         for (var i=0; i < $scope.data.length; i++)
                         {
-                            //console.log($scope.data[i][1].toFixed(8));
                             energy.push($scope.data[i][1]);
                         }
                         return energy
