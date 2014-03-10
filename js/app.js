@@ -1,9 +1,9 @@
 'use strict';
 
-var start = 0;
+var start = 1388534400000;
 var end = (new Date()).getTime();
 
-var app = angular.module('parfois_monitor', ['ui.router', 'chieffancypants.loadingBar']);
+var app = angular.module('parfois_monitor', ['ui.router', 'chieffancypants.loadingBar', "highcharts-ng"]);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
     var     home = {
@@ -26,10 +26,92 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     }
                 },
                 controller: function ($scope, dayData) {
-                    var series = dayData;
                     $scope.data = dayData;
 
-                    chart(series);
+                    $scope.parse_days = function () {
+                        var days = []
+                        for (var i=0; i < $scope.data.length; i++)
+                        { 
+                            days.push($scope.data[i][0]);
+                            var date = new Date ($scope.data[i][0]);
+                            console.log(date);
+                        }
+                        return days
+                    };
+
+                    $scope.parse_energy = function () {
+                        var energy = []
+                        for (var i=0; i < $scope.data.length; i++)
+                        { 
+                            energy.push($scope.data[i][1]);
+                        }
+                        return energy
+                    };
+
+                    $scope.days     = $scope.parse_days();
+                    $scope.energy   = $scope.parse_energy();
+
+                    $scope.highchartsNgConfig = {
+                         options: {
+                             chart: {
+                                 type: 'column'
+                             },
+                             tooltip: {
+                                 style: {
+                                     padding: 10,
+                                     fontWeight: 'bold'
+                                 }
+                             },
+                         },
+                         series: [{
+                            name: 'Energy',
+                             data: $scope.energy,
+                             dataLabels: {
+                            enabled: true,
+                            rotation: -90,
+                            color: '#FFFFFF',
+                            align: 'right',
+                            x: 4,
+                            y: 10,
+                            style: {
+                                fontSize: '13px',
+                                fontFamily: 'Verdana, sans-serif',
+                                textShadow: '0 0 3px black'
+                            }
+                        }
+                         }],
+                         title: {
+                             text: 'Energy Consumption'
+                         },
+                         loading: false,
+                         xAxis: {
+                            categories: $scope.days,
+                            currentMin: 0,
+                            currentMax: 7,
+                            title: {text: 'Day'},
+                            labels: {
+                                rotation: -45,
+                                align: 'right',
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: 'Energy (kWh)'
+                            }
+                        },
+                        tooltip: {
+                            pointFormat: 'Energy Consumed in {point.x}: <b>{point.y:.1f} kWh</b>',
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        useHighStocks: false
+                    };
 
                 }
             },
