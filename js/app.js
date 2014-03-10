@@ -32,9 +32,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                         var days = []
                         for (var i=0; i < $scope.data.length; i++)
                         { 
-                            days.push($scope.data[i][0]);
                             var date = new Date ($scope.data[i][0]);
-                            console.log(date);
+                            var date_str = date.toDateString();
+                            days.push(date_str);
                         }
                         return days
                     };
@@ -42,8 +42,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     $scope.parse_energy = function () {
                         var energy = []
                         for (var i=0; i < $scope.data.length; i++)
-                        { 
-                            energy.push($scope.data[i][1]);
+                        {
+                            //console.log($scope.data[i][1].toFixed(8));
+                            energy.push($scope.data[i][1].toFixed(8));
                         }
                         return energy
                     };
@@ -52,43 +53,45 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     $scope.energy   = $scope.parse_energy();
 
                     $scope.highchartsNgConfig = {
-                         options: {
-                             chart: {
-                                 type: 'column'
-                             },
-                             tooltip: {
-                                 style: {
-                                     padding: 10,
-                                     fontWeight: 'bold'
-                                 }
-                             },
-                         },
-                         series: [{
+                        options: {
+                            chart: {
+                                type: 'column'
+                            },
+                            tooltip: {
+                                style: {
+                                    padding: 10,
+                                    fontWeight: 'bold'
+                                }
+                            },
+                        },
+                        series: [{
                             name: 'Energy',
-                             data: $scope.energy,
-                             dataLabels: {
-                            enabled: true,
-                            rotation: -90,
-                            color: '#FFFFFF',
-                            align: 'right',
-                            x: 4,
-                            y: 10,
-                            style: {
-                                fontSize: '13px',
-                                fontFamily: 'Verdana, sans-serif',
-                                textShadow: '0 0 3px black'
+                            data: $scope.energy,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                x: 4,
+                                y: 10,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif',
+                                    textShadow: '0 0 3px black'
+                                }
                             }
-                        }
-                         }],
-                         title: {
-                             text: 'Energy Consumption'
-                         },
-                         loading: false,
-                         xAxis: {
+                        }],
+                        title: {
+                            text: 'Energy Consumption'
+                        },
+                        loading: false,
+                        xAxis: {
                             categories: $scope.days,
                             currentMin: 0,
                             currentMax: 7,
-                            title: {text: 'Day'},
+                            title: {
+                                text: 'Day'
+                            },
                             labels: {
                                 rotation: -45,
                                 align: 'right',
@@ -103,9 +106,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                             title: {
                                 text: 'Energy (kWh)'
                             }
-                        },
-                        tooltip: {
-                            pointFormat: 'Energy Consumed in {point.x}: <b>{point.y:.1f} kWh</b>',
                         },
                         legend: {
                             enabled: false
