@@ -39,10 +39,10 @@ app.controller("dayCtrl", function ($scope, dayData) {
                             },
                         },
                         series: [{
-                            name: 'Energy',
+                            name: 'Energia',
                             data: $scope.energy,
                             dataLabels: {
-                                enabled: true,
+                                enabled: false,
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
@@ -56,7 +56,7 @@ app.controller("dayCtrl", function ($scope, dayData) {
                             }
                         }],
                         title: {
-                            text: 'Energy Consumption'
+                            text: 'Consumo Energético Diário'
                         },
                         loading: false,
                         xAxis: {
@@ -78,7 +78,7 @@ app.controller("dayCtrl", function ($scope, dayData) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: 'Energy (kWh)'
+                                text: 'Energia (kWh)'
                             }
                         },
                         legend: {

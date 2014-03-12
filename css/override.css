@@ -1,0 +1,27 @@
+#topbar{
+	background-color:black;
+	height:120px;
+}
+
+#tabs {
+    position: fixed;
+    top: 150px;
+	left: 10px;
+}
+
+#txt {
+	position:fixed;
+	top: 20px;
+	right: 200px;
+	color:white;
+}
+
+#content{
+	position:fixed;
+	top:150px;
+	left:300px;
+}
+
+#month_table{
+	font-size:x-small;
+}

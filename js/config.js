@@ -23,12 +23,21 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             month = {
                 name: 'month',
                 url: '/month',
-                templateUrl: "tpl/month.html"
+                templateUrl: "tpl/month.html",
+				resolve: {
+                    dayData: "day_feed"
+                },
+                controller: "monthCtrl"
             },
-            team = {
-                name: 'team',
-                url: '/team',
-                templateUrl: "tpl/team.html"
+			temp = {
+                name: 'temp',
+                url: '/temp',
+                templateUrl: "tpl/temp.html"
+            },
+			hum = {
+                name: 'hum',
+                url: '/hum',
+                templateUrl: "tpl/hum.html"
             },
             first = {
                 name: 'first',
@@ -41,5 +50,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider.state(instant);
         $stateProvider.state(day);
         $stateProvider.state(month);
-        $stateProvider.state(team);
+		$stateProvider.state(temp);
+        $stateProvider.state(hum);
 });

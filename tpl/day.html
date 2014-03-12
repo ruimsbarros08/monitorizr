@@ -1,25 +1,5 @@
 <div>
 <h3>Consumo Diário</h3> <br><br>
 
-Table <br>
-
-<table class="table">
-<tr>
-  <th>Dia</th>
-  <th>Consumo (kWh)</th> 
-</tr>
-<tr ng-repeat="each in data">
-  <td>{{ each[0] }}</td> 
-  <td>{{ each[1] }}</td> 
-</tr>
-</table>
-
-
-<br>
-Embed <br>
-<iframe style="width:580px; height:400px;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://openg.fe.up.pt/emoncms/vis/bargraph&feedid=4&embed=1"></iframe> <br>
-
-Highcharts <br>
 <highchart id="chart1" config="highchartsNgConfig"></highchart>
-
 </div>

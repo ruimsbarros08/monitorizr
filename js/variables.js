@@ -1,6 +1,6 @@
-var BASE_URL = "http://localhost";
-var apiKey = "af79464444782b5533c04bbbd83defff";
-var feedId = 7;
+var BASE_URL = "http://openg.fe.up.pt";
+var apiKey = "628f6465a180a62e1173e530ca19ba9e";
+var feedId = 4;
 
 
 

@@ -7,38 +7,42 @@
     <link href="css/cosmo-bootstrap-theme.min.css" rel="stylesheet" />
     <link href="css/toaster.css" rel="stylesheet" />
     <link href="css/loading-bar.min.css" rel="stylesheet" />
+	<link href="css/override.css" rel="stylesheet" />
 </head>
 <body>
 
 
 <div class="container">
-<img src="img/parfois.png">
-	<div class="hero-unit">
-	    <h3>Sistema de monitorização de energia</h3>
-	    <!--<div> Consumo atual: {{ cons }} </div>-->
-	</div>
+<div id="topbar" class="navbar navbar-default navbar-fixed-top"> Title
+<div id="txt" ng-controller="main_info">
+	Consumo atual: {{ cons }} <br>
+	Temperatura atual: {{ temp }} <br>
+	Humidade atual: {{ hum }} <br>
+	Consumo diário:
+</div>
+ </div>
 
-	<div class="row">
+	<!--<div class="row">-->
 
         <div class="span4">
     		<div id="tabs">
 			    <ul class="nav nav-pills nav-stacked">
 		            <li><a href="#/home">Home</a></li>
 		            <li><a href="#/instant">Consumo instantâneo</a></li>
-		         	<li><a href="#/day">Consumo Diário</a></li>
+		         	<li><a href="#/day">Consumo diário</a></li>
 		         	<li><a href="#/month">Consumo mensal</a></li>
-		         	<li><a href="#/team">Equipa</a></li>
+					<li><a href="#/temp">Temperatura</a></li>
+					<li><a href="#/hum">Humidade</a></li>
 			    </ul>
 	        </div>
     	</div>
 
-        <div class="span8">
-	        
+        <div id="content" class="span8">
          	<div>
 	     		<div ui-view></div>
          	</div>
         </div>
-   </div>
+   <!--</div>-->
 
     <hr>
 	<div class="footer">
@@ -55,8 +59,10 @@
 
 <script type="text/javascript" src="js/variables.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/instant_consume.js"></script>
 <script type="text/javascript" src="js/day_feed.js"></script>
 <script type="text/javascript" src="js/dayCtrl.js"></script>
+<script type="text/javascript" src="js/monthCtrl.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
 
 
