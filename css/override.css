@@ -22,6 +22,24 @@
 	left:300px;
 }
 
-#month_table{
-	font-size:x-small;
+.userSettings{
+	position: absolute;
+	top: 80px;
+}
+
+
+#m_y_dropdowns{
+	position: absolute;
+	left: 300px;
+}
+
+#viewOptions{
+	position: absolute;
+	left: 600px;
+}
+
+.tables_charts{
+	position: relative;
+	top: 180px;
+	overflow: auto;
 }

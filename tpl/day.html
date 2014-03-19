@@ -1,5 +1,15 @@
 <div>
 <h3>Consumo Diário</h3> <br><br>
 
+<div>
+	<ul class="pager">
+		<li class="previous disabled"><a>← Older</a></li>
+	  	<li><a ng-click="update_week(-1)">Previous</a></li>
+	  	<li><a ng-click="update_week(1)">Next</a></li>
+	  	<li class="next"><a>Newer →</a></li>
+	</ul>
+
+</div>
+
 <highchart id="chart1" config="highchartsNgConfig"></highchart>
 </div>

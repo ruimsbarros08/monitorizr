@@ -37,11 +37,9 @@ app.controller("main_info", function ($scope, $q, $http, $interval) {
 }
 
   $scope.cons = refresh(); // We call the function on initialization to load the feed.
-	console.log($scope);
   // $interval runs the given function every X millisec (2nd arg)
   $interval(function() { 
     //refresh();
 	$scope.cons = refresh();
-	console.log($scope.cons);
   }, $scope.refreshInterval * 1000); // the refresh interval must be in millisec
 });
