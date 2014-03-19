@@ -13,42 +13,79 @@
 
 
 <div class="container">
-<div id="topbar" class="navbar navbar-default navbar-fixed-top"> Title
-<div id="txt" ng-controller="main_info">
-	Consumo atual: {{ cons }} <br>
-	Temperatura atual: {{ temp }} <br>
-	Humidade atual: {{ hum }} <br>
-	Consumo diário:
-</div>
-</div>
-
-	<!--<div class="row">-->
-
-        <div class="span4">
-    		<div id="tabs">
-			    <ul class="nav nav-pills nav-stacked">
-		            <li><a href="#/home">Home</a></li>
-		            <li><a href="#/instant">Consumo instantâneo</a></li>
-		         	<li><a href="#/day">Consumo diário</a></li>
-		         	<li><a href="#/month">Consumo mensal</a></li>
-					<li><a href="#/temp">Temperatura</a></li>
-					<li><a href="#/hum">Humidade</a></li>
-			    </ul>
-	        </div>
-    	</div>
-
-        <div id="content" class="span8">
-         	<div>
-	     		<div ui-view></div>
-         	</div>
-        </div>
-   <!--</div>-->
-
-    <hr>
-    </div>
-	<div class="footer">
-	
+	<div id="topbar" class="navbar navbar-default navbar-fixed-top"> Title
+		<div id="txt" ng-controller="main_info">
+			Consumo atual: {{ cons }} <br>
+			Temperatura atual: {{ temp }} <br>
+			Humidade atual: {{ hum }} <br>
+			Consumo diário:
+		</div>
 	</div>
+
+	<div class="span4">
+		<div id="tabs">
+		    <ul class="nav nav-pills nav-stacked">
+	            <li><a href="#/home">Home</a></li>
+	            <li><a href="#/instant">Consumo instantâneo</a></li>
+	         	<li><a href="#/day">Consumo diário</a></li>
+	         	<li><a href="#/month">Consumo mensal</a></li>
+				<li><a href="#/temp">Temperatura</a></li>
+				<li><a href="#/hum">Humidade</a></li>
+		    </ul>
+	    </div>
+	</div>
+
+	<div id="content" class="span8">
+	 	<div>
+	 		<div ui-view></div>
+	 	</div>
+	</div>
+
+	<div class="Settings">
+		<div class="settingsContent">
+			<form class="form-horizontal">
+				<fieldset>
+					<legend>Definições</legend>
+					    <div class="form-group">
+					      	<label for="inputEmail" class="col-lg-2 control-label">Email</label>
+						    <div class="col-lg-10">
+						        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+						    </div>
+					    </div>
+
+					    <div class="form-group">
+					      	<label for="inputTmax" class="col-lg-2 control-label">Temperatura Máxima (Cº)</label>
+						    <div class="col-lg-10">
+						        <input type="text" class="form-control" id="inputTmax">
+						    </div>
+					    </div>
+					    <div class="form-group">
+					      	<label for="inputTmin" class="col-lg-2 control-label">Temperatura Mínima (Cº)</label>
+						    <div class="col-lg-10">
+						        <input type="text" class="form-control" id="inputTmin">
+						    </div>
+					    </div>
+					    <div class="form-group">
+					      	<label for="price" class="col-lg-2 control-label">Custo kWh (&euro;)</label>
+						    <div class="col-lg-10">
+						        <input type="text" class="form-control" id="price">
+						    </div>
+					    </div>
+					    <div class="form-group">
+					      <div class="col-lg-10 col-lg-offset-2">
+					        <button type="submit" class="btn btn-primary">Guardar</button>
+					      </div>
+					    </div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+	<hr>
+</div>
+<div class="footer">
+
+</div>
 
 <!-- 3rd party libraries -->
 <script type="text/javascript" src="js/lib/angular.min.js"></script>
