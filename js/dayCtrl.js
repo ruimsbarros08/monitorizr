@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("dayCtrl", function ($scope, dayData) {
+app.controller("dayCtrl", function ($scope, $rootScope, dayData) {
     $scope.raw_data = dayData;
 
     $scope.parse_data = function () {
@@ -39,7 +39,6 @@ app.controller("dayCtrl", function ($scope, dayData) {
 
     //Defaults
     $scope.data     = $scope.parse_data();
-    $scope.price    = 0.1;
     $scope.week     = 0;
     $scope.week_limit = parseInt($scope.data[0].length/7)
     $scope.style1 = "next disabled";

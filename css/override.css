@@ -13,14 +13,21 @@
 	width: 15%
 }
 
-#txt {
-	position:fixed;
-	/*top: 20px;
-	right: 200px;*/
-	color:white;
-	top: 5%;
-	right: 10%;
-	height:20%;
+#instant_info {
+	position: fixed;
+	top: 2%;
+	right: 1%;
+	width: 20%;
+	height: 16%;
+	background-color: #5C5C5C;
+	color: white;
+	border-radius: 10px;
+	font-size: x-small;
+}
+
+#instant_text {
+	position: relative;
+	top:5%;
 }
 
 #content{
@@ -56,15 +63,10 @@
 .Settings{
 	position: fixed;
 	top: 22%;
-	right: 0%;
+	right: 1%;
 	width: 20%;
-	height: 78%;
-	border-left-style: solid;
-	border-left-width: 3px;
-	border-left-color: #82ADF5;
-	border-top-style: solid;
-	border-top-width: 3px;
-	border-top-color: #82ADF5;
+	height: 76%;
+	background-color: #E8E8E8;
 	border-radius: 10px;
 }
 

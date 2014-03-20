@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("monthCtrl", function ($scope, dayData) {
+app.controller("monthCtrl", function ($scope, $rootScope, dayData) {
 	//Data from the API
     $scope.data = dayData;
 
@@ -61,7 +61,6 @@ app.controller("monthCtrl", function ($scope, dayData) {
 	$scope.year = new Date ().getFullYear();
 	$scope.month = new Date ().getMonth();
 	$scope.type = "Mês";
-	$scope.price = 0.1;
 
 	//Update year when dropdown change
 	$scope.update_year = function(year){
