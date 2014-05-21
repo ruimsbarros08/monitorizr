@@ -10,8 +10,8 @@
 			    <slide ng-repeat="slide in slides" active="slide.active" style="height:500px;">
 			        <img ng-src="{{slide.image}}" style="margin:auto;">
 			        <div class="carousel-caption">
-			          	<h5>Web App para monitorização do consumo energético, temperatura e humidade</h5>
-			          	<a href="#/instant" class="btn btn-primary btn-sm">Começar!</a>
+			          	<h4>Web App para monitorização do consumo energético, temperatura e humidade</h4>
+			          	<div ng-bind-html="slide.text"></div>
 			        </div>
 			    </slide>
 		    </carousel>
