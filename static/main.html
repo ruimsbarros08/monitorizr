@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="login">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+
+    <title>Energy Monitor Login</title>
+
+    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/cosmo-bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="css/toaster.css" rel="stylesheet" />
+    <link href="css/loading-bar.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+  </head>
+
+  <body>
+
+    <div class="container" ng-controller="loginCtrl" style="width:500px;">
+
+      <form class="form-signin" role="form">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="email" class="form-control" placeholder="Email/Username" required autofocus ng-model="user">
+        <input type="password" class="form-control" placeholder="Password" required ng-model="password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <!--<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login_(user, password)">Sign in</button>-->
+        <a href="/monitorizr/login">LOGIN</a>
+      </form>
+
+    </div> <!-- /container -->
+
+    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular.min.js"></script>
+    <script type="text/javascript" src="js/variables.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+
+  </body>
+</html>

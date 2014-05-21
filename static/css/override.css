@@ -1,0 +1,82 @@
+#topbar{
+	background-color: black;
+	/*height:120px;*/
+	height: 20%;
+}
+
+
+#tabs {
+    position: fixed;
+    /*top: 150px;
+	left: 10px;*/
+	top: 25%;
+	left: 2%;
+	width: 15%
+}
+
+#instant_info {
+	position: fixed;
+	top: 0%;
+	right: 0%;
+	/*width: 20px;*/
+	height: 20%;
+	background-color: #5C5C5C;
+	padding-right:138px;
+	color: white;
+	/*border-radius: 10px;
+	font-size: x-small;*/
+}
+
+#content{
+	position:fixed;
+	/*top:150px;
+	left:300px;*/
+	top:25%;
+	left:20%;
+	width: 800px;
+	height: 75%;
+}
+
+.userSettings{
+	position: absolute;
+	top: 80px;
+}
+
+
+#m_y_dropdowns{
+	position: absolute;
+	left: 300px;
+}
+
+#viewOptions{
+	position: absolute;
+	left: 600px;
+}
+
+.tables_charts{
+	position: relative;
+	top: 180px;
+	overflow: auto;
+}
+
+.Settings{
+	position: fixed;
+	top: 22%;
+	/*
+	right: 1%;
+	width: 20%;
+	height: 76%;
+	background-color: #E8E8E8;
+	border-radius: 10px;
+}
+
+.settingsContent{
+	padding-left: 5%;
+	padding-top: 10%;
+	*/
+	
+}
+
+#ng-pageslide {
+                background: #eee;
+            }

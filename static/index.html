@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="monitor">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <title>Energy Monitor</title>
+
+  <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/cosmo-bootstrap-theme.min.css" rel="stylesheet" />
+  <link href="css/toaster.css" rel="stylesheet" />
+  <link href="css/loading-bar.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+<nav class="navbar-wrapper navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/home">MONITORIZR</a>
+    </div>
+    <div class="collapse navbar-collapse" id="collapse-button">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/monitorizr/logout">Logout <span class="glyphicon glyphicon-off"></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid">
+  <div class="row" style="padding-top:60px; padding-bottom:60px;">
+    <div class="col-md-2 sidebar">
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="#/home">Início</a></li>
+        <li><a href="#/instant">Consumo instantâneo</a></li>
+        <li><a href="#/day">Consumo diário</a></li>
+        <li><a href="#/month">Consumo mensal</a></li>
+        <li><a href="#/temp">Temperatura</a></li>
+        <li><a href="#/hum">Humidade</a></li>
+      </ul>
+
+      <br>
+
+      <div class="panel panel-default" ng-controller="weatherCtrl">
+        <div class="panel-heading">Informação Meteorológica</div>
+        <div class="panel-body">
+          <ul>
+            <li type="none">Porto</li>
+            <li type="none"><img src="{{weather.value.icon_url}}"></li>
+            <li type="none">Temperatura: {{ weather.value.temperature }}º</li>
+            <li type="none">Humidade Relativa: {{ weather.value.rel_humidity }}</li>
+          </ul>
+        </div>
+      </div>
+  </div>
+
+    <div class="col-md-8 main">
+      <div ui-view></div>
+    </div>
+
+    <div class="col-md-2 sidebar" ng-controller="settings">
+
+    <button class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">Definições <span class="glyphicon glyphicon-cog"></button>
+          <form class="form-vertical" collapse="!isCollapsed" style="background-color:#eeeeee; padding-right:10px; padding-left:10px; padding-top:10px; padding-bottom:10px;">
+            <fieldset>
+                  <div class="form-group">
+                      <label for="inputEmail">Email</label>
+                    <div>
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Email" ng-model="mail">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="inputTmax">Temperatura Máxima (Cº)</label>
+                    <div>
+                        <input type="text" class="form-control" id="inputTmax" ng-model="tmax">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="inputTmin">Temperatura Mínima (Cº)</label>
+                    <div>
+                        <input type="text" class="form-control" id="inputTmin" ng-model="tmin">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="price">Custo kWh (&euro;)</label>
+                    <div>
+                        <input type="text" class="form-control" id="price" ng-model="price">
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary" ng-click="updateSettings(mail, tmax, tmin, price)">Guardar</button>
+                  </div>
+            </fieldset>
+          </form>
+    </div>
+  </div>
+</div>
+
+<footer class="navbar-wrapper navbar-default navbar-fixed-bottom">
+  <div class="container" ng-controller="main_info">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-button2">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <div class="collapse navbar-collapse" id="collapse-button2">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#/instant"> Consumo: {{ cons.value }} </a></li>
+      <li><a href="#/temp"> Temperatura: {{ temp.value }} </a></li>
+      <li><a href="#/hum"> Humidade: {{ hum.value }} </a></li>
+    </ul>
+  </div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/lib/angular.min.js"></script>
+<script type="text/javascript" src="js/lib/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highcharts/3.0.9/highcharts.js"></script>
+<script type="text/javascript" src="js/lib/highcharts-ng.js"></script>
+<script type="text/javascript" src="js/lib/loading-bar.min.js"></script>
+<script type="text/javascript" src="js/lib/angular-pageslide-directive.min.js"></script>
+<script type="text/javascript" src="js/lib/ui-bootstrap-tpls-0.10.0.min.js"></script>
+
+<script type="text/javascript" src="js/variables.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/instant.js"></script>
+<script type="text/javascript" src="js/day_feed.js"></script>
+<script type="text/javascript" src="js/weather.js"></script>
+
+<script type="text/javascript" src="js/settings.js"></script>
+<script type="text/javascript" src="js/dayCtrl.js"></script>
+<script type="text/javascript" src="js/monthCtrl.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+
+</body>
+</html>
+
