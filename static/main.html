@@ -22,13 +22,13 @@
 
       <form class="form-signin" role="form">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="email" class="form-control" placeholder="Email/Username" required autofocus ng-model="user">
+        <input type="username" class="form-control" placeholder="Username" required autofocus ng-model="username">
         <input type="password" class="form-control" placeholder="Password" required ng-model="password">
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Remember me
         </label>
-        <!--<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login_(user, password)">Sign in</button>-->
-        <a href="/monitorizr/login">LOGIN</a>
+
+        <div class="btn btn-primary btn-sm" style="width:100%;" ng-click="login_(username, password)"> LOGIN </div>
       </form>
 
     </div> <!-- /container -->
