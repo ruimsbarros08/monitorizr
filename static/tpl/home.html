@@ -1,8 +1,23 @@
-<div class="jumbotron">
+<!--<div class="jumbotron">
   <h2>Racionalização da energia</h2>
   <p>Web App para monitorização do consumo energético, temperatura e humidade</p>
   <p><a href="#/instant" class="btn btn-primary btn-sm">Começar!</a></p>
-</div>
+</div>-->
+
+  	<div class="row">
+		<div class="col-md-12">
+			<carousel interval="myInterval">
+			    <slide ng-repeat="slide in slides" active="slide.active" style="height:500px;">
+			        <img ng-src="{{slide.image}}" style="margin:auto;">
+			        <div class="carousel-caption">
+			          	<h5>Web App para monitorização do consumo energético, temperatura e humidade</h5>
+			          	<a href="#/instant" class="btn btn-primary btn-sm">Começar!</a>
+			        </div>
+			    </slide>
+		    </carousel>
+		</div>
+	</div>
+
 
 <!--
 <h3 class="page-header">Racionalização da energia</h3>

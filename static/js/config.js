@@ -4,7 +4,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     var     home = {
                 name: 'home',
                 url: '/home',
-                templateUrl: "tpl/home.html"
+                templateUrl: "tpl/home.html",
+                controller: "homeCtrl"
             },
             instant = {
                 name: 'instant',
@@ -41,8 +42,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             },
             first = {
                 name: 'first',
-                url: '/',
-                templateUrl: "tpl/home.html"
+                url: '',
+                templateUrl: "tpl/home.html",
+                controller: "homeCtrl"
             }
 
         $stateProvider.state(first);
