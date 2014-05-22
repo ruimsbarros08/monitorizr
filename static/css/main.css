@@ -1,13 +1,5 @@
-/*
-#sidebar-top.affix-top {
-    position: static;
-    margin-top:30px;
-    width:228px;
-  }
 
-  #sidebar-top.affix {
-    position: fixed;
-    top:70px;
-    width:228px;
-  }
-  */
+ul
+{
+    list-style-type: none;
+}

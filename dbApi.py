@@ -28,6 +28,18 @@ def passwordValidation(username, password):
 		message["validationStatus"] = e.args[0]
 		return message
 
+def getUser(username):
+	try:
+		connection = sqlite3.connect(path)
+		cur = connection.cursor()
+		cur.execute('SELECT * FROM users2 WHERE username = ?', (username,))
+		info = cur.fetchall()
+		connection.close()
+		print "Done", info
+		return info[0]
+	except sqlite3.Error as e:
+		print "Ups,", e.args[0]
+
 
 def updateValues(data2update):
 	try:
@@ -37,7 +49,9 @@ def updateValues(data2update):
 	    connection.commit()
 	    connection.close()
 	    print "Done"
+	    return "Data updated on the database"
 	except sqlite3.Error as e:
-		print "Ups,", e.args[0]
+		print "Ups, ", e.args[0]
+		return "Ups, "+e.args[0]
 
 #print passwordValidation("fedfw", "cenas")

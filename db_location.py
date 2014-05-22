@@ -1,1 +1,1 @@
-path = '/srv/openg/monitorizr/monitorizr.sqlite'
+path = '/srv/apps/parfois/monitorizr.sqlite'

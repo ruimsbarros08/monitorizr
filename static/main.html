@@ -19,17 +19,28 @@
   <body>
 
     <div class="container" ng-controller="loginCtrl" style="width:500px;">
+        <div class="row" style="height:150px;">
+        </div>
 
-      <form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="username" class="form-control" placeholder="Username" required autofocus ng-model="username">
-        <input type="password" class="form-control" placeholder="Password" required ng-model="password">
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
+        <div class="row">
+            <img src="img/parfois.png" style="width: 100%;">
+        </div>
 
-        <div class="btn btn-primary btn-sm" style="width:100%;" ng-click="login_(username, password)"> LOGIN </div>
-      </form>
+        <div class="row" style="height:25px;">
+        </div>
+
+        <form class="form-signin" role="form" ng-submit="login_(username, password)">
+            <input type="username" class="form-control" placeholder="Username" required autofocus ng-model="username">
+            <input type="password" class="form-control" placeholder="Password" required ng-model="password">
+            <!--<label class="checkbox">
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>-->
+
+            <div class="row" style="height:25px;">
+            </div>
+
+            <input class="btn btn-primary btn-sm" type="submit" style="width:100%;" value="LOGIN">
+        </form>
 
     </div> <!-- /container -->
 

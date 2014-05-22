@@ -22,11 +22,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#/home">MONITORIZR</a>
+      <a class="navbar-brand" href="#/home"><img src="img/parfois2.jpg" style="height:35px;"></a>
     </div>
-    <div class="collapse navbar-collapse" id="collapse-button">
+    <div class="collapse navbar-collapse" id="collapse-button"><!--ng-controller="counterSelector"-->
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/monitorizr/logout">Logout <span class="glyphicon glyphicon-off"></a></li>
+      <!--<li><a href="#/instant">Contador Activo: {{ counter }}</a></li>
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contador <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><div ng-click="setCounter(1)">1</div></li>
+          <li class="divider"></li>
+          <li><div ng-click="setCounter(2)">2</div></li>
+        </ul>
+      </li>-->
+
+        <li><a href="/parfois/logout">Logout <span class="glyphicon glyphicon-off"></a></li>
       </ul>
     </div>
   </div>
@@ -39,9 +49,9 @@
     <div class="col-md-2 sidebar">
       <ul class="nav nav-pills nav-stacked">
         <li><a href="#/home">Início</a></li>
-        <li><a href="#/instant">Consumo instantâneo</a></li>
-        <li><a href="#/day">Consumo diário</a></li>
-        <li><a href="#/month">Consumo mensal</a></li>
+        <li><a href="#/instant">Consumo Instantâneo</a></li>
+        <li><a href="#/day">Consumo Diário</a></li>
+        <li><a href="#/month">Consumo Mensal</a></li>
         <li><a href="#/temp">Temperatura</a></li>
         <li><a href="#/hum">Humidade</a></li>
       </ul>
@@ -67,8 +77,8 @@
 
     <div class="col-md-2 sidebar" ng-controller="settings">
 
-    <button class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">Definições <span class="glyphicon glyphicon-cog"></button>
-          <form class="form-vertical" collapse="!isCollapsed" style="background-color:#eeeeee; padding-right:10px; padding-left:10px; padding-top:10px; padding-bottom:10px;">
+    <button class="btn btn-primary" ng-click="isCollapsed = !isCollapsed" style="width:100%;">Definições <span class="glyphicon glyphicon-cog"></button>
+          <form class="form-vertical" collapse="!isCollapsed" style="background-color:#eeeeee; padding-right:10px; padding-left:10px; padding-top:10px; padding-bottom:10px;" ng-submit="updateSettings(mail, tmax, tmin, price)">
             <fieldset>
                   <div class="form-group">
                       <label for="inputEmail">Email</label>
@@ -97,7 +107,7 @@
                   </div>
                   <hr>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary" ng-click="updateSettings(mail, tmax, tmin, price)">Guardar</button>
+                    <button type="submit" class="btn btn-success" style="width:100%;">Guardar</button>
                   </div>
             </fieldset>
           </form>
@@ -117,9 +127,9 @@
   </div>
   <div class="collapse navbar-collapse" id="collapse-button2">
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#/instant"> Consumo: {{ cons.value }} </a></li>
-      <li><a href="#/temp"> Temperatura: {{ temp.value }} </a></li>
-      <li><a href="#/hum"> Humidade: {{ hum.value }} </a></li>
+      <li><a href="#/instant"> Consumo (A/C): <div ng-bind="cons" style="display:inline-block;"></div> W</a></li>
+      <li><a href="#/temp"> Temperatura: <div ng-bind="temp" style="display:inline-block;"></div> ºC</a></li>
+      <li><a href="#/hum"> Humidade: <div ng-bind="hum" style="display:inline-block;"></div> %</a></li>
     </ul>
   </div>
   </div>
@@ -145,6 +155,7 @@
 
 <script type="text/javascript" src="js/settings.js"></script>
 <script type="text/javascript" src="js/homeCtrl.js"></script>
+<!--<script type="text/javascript" src="js/counterSelector.js"></script>-->
 <script type="text/javascript" src="js/dayCtrl.js"></script>
 <script type="text/javascript" src="js/monthCtrl.js"></script>
 <script type="text/javascript" src="js/config.js"></script>

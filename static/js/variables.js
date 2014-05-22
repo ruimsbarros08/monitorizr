@@ -1,14 +1,14 @@
-var BASE_URL = "http://openg.fe.up.pt";
-var apiKey = "628f6465a180a62e1173e530ca19ba9e";
+var BASE_URL = "http://85.139.244.19/";
+var apiKey = "e917c5f657955183ed1447d4c52dad01";
 
 //Energy dayly consume:
-var feedId_dayly_energy = "4";
+var feedId_dayly_energy = "13";
 
 //Energy instantaneous consume:
-var feedId_instant_energy = "3";
+var feedId_instant_energy = "7";
 
 //Instantaneous temperature:
-var feedId_dayly_temp = "1";
+var feedId_dayly_temp = "2";
 
 //Instantaneous humidity:
-var feedId_dayly_hum = "2";
+var feedId_dayly_hum = "3";

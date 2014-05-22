@@ -3,7 +3,7 @@
 app.service('weatherSrvc',function ($http, $q){
   return {
     getWeatherData: function(){
-      var url = BASE_URL+"/monitorizr/getWeather";
+      var url = BASE_URL+"/parfois/getWeather";
       var response = {};
       $http.get(url).success(function(data){
         response.value = data;
